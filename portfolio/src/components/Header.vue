@@ -1,0 +1,48 @@
+<template>
+  <v-system-bar id=header
+    height="60">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="">WORKS</a></li>
+        <li><a href="">CURRICULUM</a></li>
+        <li><a href="">CONTACT</a></li>
+      </ul>
+  </v-system-bar>
+</template>
+<script>
+export default {
+  name: 'Header'
+}
+</script>
+<style>
+#header{
+  background-color: #0D0D0D;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: Uchen;
+    font-size: 14PX;
+}
+
+li a { color:#F7F7F7} /* Globally */
+li a:visited { text-decoration: none; color:#F7F7F7; }
+li a:hover { text-decoration: none; color:#5E3927; }
+li a:focus { text-decoration: none; color:#5E3927;}
+li a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
+
+</style>
