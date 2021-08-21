@@ -26,11 +26,11 @@ ul {
     overflow: hidden;
 }
 
-li {
+#header li {
     float: left;
 }
 
-li a {
+#header li a {
     text-decoration: none;
     display: block;
     text-align: center;
@@ -39,10 +39,10 @@ li a {
     font-size: 14PX;
 }
 
-li a { color:#F7F7F7} /* Globally */
-li a:visited { text-decoration: none; color:#F7F7F7; }
-li a:hover { text-decoration: none; color:#5E3927; }
-li a:focus { text-decoration: none; color:#5E3927;}
-li a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
+#header li a { color:#F7F7F7} /* Globally */
+#header li a:visited { text-decoration: none; color:#F7F7F7; }
+#header li a:hover { text-decoration: none; color:#5E3927; }
+#header li a:focus { text-decoration: none; color:#5E3927;}
+#header li a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
 
 </style>
