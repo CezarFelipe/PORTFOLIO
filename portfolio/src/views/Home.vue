@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="image">
-        image
+        <img src="../assets/Rectangle 13.png" alt="">
       </div>
     </div>
     <div class="body-bottom">
@@ -86,25 +86,25 @@ h2 span
   color:#5E3927;
 }
 .body{
-  height: 530px;
+  height: 400px;
+  background-color:#0D0D0D;
 }
 .body-top{
-  background-color: aqua;
-  height: 65%;
+  height: 90%;
 }
 .text{
   float: left;
-  background-color:#0D0D0D;
   height:100%;
   width: 60%;
+  margin-top: 10px;
 }
 .image{
-  background-color:azure;
   height: 100%;
+  width: 100%;
 }
-.body-bottom{
-  background-color: blue;
-  height: 35%;
+.image img {
+  width: 33%;
+  height: 100%;
 }
 .titulo{
   background-color: green;
@@ -117,10 +117,12 @@ h2 span
   height: 80%;
 }
 .body-bottom{
-  background-color: blue;
+  background-color: rgb(255, 0, 85);
+  height: 43%;
 }
 .text2{
   height: 100%;
+  margin-top: 20px;
 }
 .text2-image{
   float: left;
@@ -135,20 +137,22 @@ h2 span
 }
 .text2-text{
   height: 100%;
+  margin-right: 60px;
 }
 .text2-text-titulo{
   text-align: center;
   height: 20%;
 }
 .text2-text-topico{
-  text-align: center;
   height: 33%;
+  margin-top: 20px;
 }
 .text2-text-topico1{
   float: left;
   height: 100%;
   width: 30%;
   text-align: left;
+  margin-left: 50px;
 }
 .text2-text-topico2{
   float: left;
