@@ -35,10 +35,15 @@
       </div>
     </div>
     <div class="body-bottom">
-      <div class="titulo">
-        TITULOS
+      <div class="body-bottom-titulo">PORTFOLIO
       </div>
-      <div class="link">LINK TRABALHOS
+      <div class="body-bottom-link">
+          <ul>
+            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
+            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
+            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
+            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
+          </ul>
       </div>
     </div>
   </div>
@@ -106,19 +111,23 @@ h2 span
   width: 33%;
   height: 100%;
 }
-.titulo{
-  background-color: green;
-  text-align: center;
+.body-bottom-titulo{
   height: 20%;
-}
-.link{
-  background-color:yellow;
+  width: 100%;
+  float:left;
   text-align: center;
-  height: 80%;
+  color:#F7F7F7;
+  font-size:24px;
+  font-family: Uchen;
+}
+.body-bottom-link{
+  text-align: center;
+  height: 100%;
 }
 .body-bottom{
-  background-color: rgb(255, 0, 85);
   height: 43%;
+  width: 100%;
+  background-color: #0D0D0D;
 }
 .text2{
   height: 100%;
@@ -173,5 +182,23 @@ h2 span
   font-size: 20PX;
   padding: 2px;
   color:#F7F7F7;
+}
+.body-bottom-link ul {
+    list-style-type: none;
+}
+.body-bottom-link li {
+    float:left;
+}
+.body-bottom-link li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 14px 5px;
+    font-family: Uchen;
+    font-size: 14PX;
+}
+.body-bottom-link li a img{
+  width: 50%;
+  height: 100%;
 }
 </style>

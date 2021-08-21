@@ -19,7 +19,7 @@ export default {
 #header{
   background-color: #0D0D0D;
 }
-ul {
+#header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
