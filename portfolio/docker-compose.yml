@@ -2,6 +2,6 @@ version: '3.0'
 
 services: 
     aplicacao:
-        image: portfolio3
+        image: cezarfelpis/portfolio3
         ports: 
         - '81:8082'
