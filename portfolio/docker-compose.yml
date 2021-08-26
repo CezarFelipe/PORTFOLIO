@@ -4,4 +4,4 @@ services:
     aplicacao:
         image: cezarfelpis/portfolio3
         ports: 
-        - '81:8082'
+        - '8080:8082'
