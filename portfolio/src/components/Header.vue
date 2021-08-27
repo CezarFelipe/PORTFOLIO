@@ -2,11 +2,11 @@
   <v-system-bar id=header
     height="60">
       <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/about">ABOUT</a></li>
-        <li><a href="">WORKS</a></li>
-        <li><a href="">CURRICULUM</a></li>
-        <li><a href="">CONTACT</a></li>
+        <li><router-link to="/">HOME</router-link></li>
+        <li><router-link to="/about">ABOUT</router-link></li>
+        <li><router-link to="/works">WORKS</router-link></li>
+        <li><router-link to="/curriculum">CURRICULUM</router-link></li>
+        <li><router-link to="/contact">CONTACT</router-link></li>
       </ul>
   </v-system-bar>
 </template>
