@@ -16,5 +16,8 @@
    color:#F7F7F7;
    font-family: Uchen;
    font-size: 14PX;
+   position:fixed;
+   bottom:0;
+   width:100%;
  }
 </style>
