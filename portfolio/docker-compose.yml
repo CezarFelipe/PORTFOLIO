@@ -1,7 +1,8 @@
 version: '3.0'
 
 services: 
-    aplicacao:
-        image: cezarfelpis/portfolio3
+    app:
+        build: .
+        container_name: portfolio-app
         ports: 
         - '80:8082'
