@@ -59,7 +59,6 @@ height:65%;
 .about-body-bottom{
 width: 100%;
 height: 35%;
-background-color:yellow;
 }
 .about-body-top-image img {
   width: 100%;
@@ -68,11 +67,9 @@ background-color:yellow;
 .about-body-bottom-image{
   width: 15%;
   height: 100%;
-  background-color: brown;
   float: left;
 }
 .about-body-bottom-tex{
-  background-color: green;
   height: 100%;
   width: 100%;
 }
