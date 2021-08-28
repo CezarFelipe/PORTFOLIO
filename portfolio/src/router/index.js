@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Works from '../views/WorksDetails.vue'
 import Error404 from '../views/Error404.vue'
 Vue.use(VueRouter)
 
@@ -14,6 +15,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/works',
+    name: 'Work',
+    component: Works
   },
   {
     path: '/about',

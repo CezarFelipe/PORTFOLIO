@@ -22,3 +22,40 @@ export default {
   })
 }
 </script>
+<style>
+h1
+{
+  font-size: 60px;
+  font-family: Uchen;
+  color:#F7F7F7;
+  margin: 4px;
+}
+h2
+{
+  font-size: 50px;
+  font-family: Uchen;
+  color:#F7F7F7;
+  margin: 4px;
+}
+h4
+{
+  font-size: 20px;
+  font-family: Uchen;
+  color:#F7F7F7;
+  margin: 4px;
+}
+h1 span
+{
+  color:#5E3927;
+}
+h2 span
+{
+  color:#5E3927;
+}
+h6
+{
+  font-size: 12px;
+  font-family: Uchen;
+  color:#F7F7F7;
+}
+</style>

@@ -61,35 +61,6 @@ export default {
   margin-right: 10px;
   width: 80%;
 }
-h1
-{
-  font-size: 60px;
-  font-family: Uchen;
-  color:#F7F7F7;
-  margin: 4px;
-}
-h2
-{
-  font-size: 50px;
-  font-family: Uchen;
-  color:#F7F7F7;
-  margin: 4px;
-}
-h4
-{
-  font-size: 20px;
-  font-family: Uchen;
-  color:#F7F7F7;
-  margin: 4px;
-}
-h1 span
-{
-  color:#5E3927;
-}
-h2 span
-{
-  color:#5E3927;
-}
 .body{
   height: 400px;
   background-color:#0D0D0D;
