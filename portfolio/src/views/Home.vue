@@ -38,20 +38,43 @@
       <div class="body-bottom-titulo">PORTFOLIO
       </div>
       <div class="body-bottom-link">
-          <ul>
-            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
-            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
-            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
-            <li><a href=""><img src="../assets/Rectangle 5.png" alt=""></a></li>
-          </ul>
+          <v-flex xs12 md4 v-for="work in works" :key="work.categoryId">
+            <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
+          </v-flex>
       </div>
     </div>
   </div>
 </template>
 <script>
+import api from '../service/api/api'
 export default {
   name: 'Home',
   components: {
+  },
+  data: () => {
+    return {
+      works: []
+    }
+  },
+  created () {
+    this.loading = false
+    this.getWork()
+  },
+  methods: {
+    getWork () {
+      api
+        .get('/works')
+        .then(response => {
+          this.works = response.data
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
   }
 }
 </script>

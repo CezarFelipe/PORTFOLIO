@@ -2,49 +2,12 @@
 <div class="works-body">
 <div class="works-body-box">
 <v-container class="work-body">
-  <v-layout row wrap class="work-body-top">
-    <v-flex xs12 md4>
-      <router-link to=""><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-      <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
-      </div>
-    </v-flex>
-    <v-flex xs12 md4>
-      <router-link to="/"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-      <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
-      </div>
-    </v-flex>
-    <v-flex xs12 md4>
-      <router-link to=""><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-      <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
-      </div>
-    </v-flex>
-  </v-layout>
   <v-layout row wrap class="work-body-bottom">
-    <v-flex xs12 md4>
-      <router-link to=""><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-      <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
-      </div>
-    </v-flex>
-    <v-flex xs12 md4>
-      <router-link to=""><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-      <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
-      </div>
-    </v-flex>
-    <v-flex xs12 md4>
-    <router-link to=""><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
+    <v-flex xs12 md4 v-for="work in works" :key="work.categoryId">
+    <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
     <div class="work-body-image-text">
-        <h6>Title: Logistic Management System</h6>
-        <h6>Type: web system</h6>
+        <h6>Title: {{work.title}}</h6>
+        <h6>Type: {{work.type}}</h6>
       </div>
     </v-flex>
   </v-layout>
@@ -53,6 +16,34 @@
 </div>
 </template>
 <script>
+import api from '../service/api/api'
+export default {
+  data: () => {
+    return {
+      works: []
+    }
+  },
+  created () {
+    this.loading = false
+    this.getWork()
+  },
+  methods: {
+    getWork () {
+      api
+        .get('/works')
+        .then(response => {
+          this.works = response.data
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
+  }
+}
 </script>
 <style>
 .works-body{
@@ -73,5 +64,9 @@ padding-top: 5%;
 }
 .works-body{
   background-color: #0D0D0D;
+}
+.work-body-image-text h6{
+  color: #FFFFFF;
+  font-weight: unset;
 }
 </style>

@@ -1,24 +1,25 @@
 <template>
-<div class="works-details-body">
+<div v-if="loading" class="works-details-body">
+<v-skeleton-loader>
   <div class="works-details-body-top">
   <v-layout row wrap id="works-details-body-top-row">
     <v-flex xs12 md9>
     <div class="works-details-body-top-left"><br/>
-        <div><h4>Sistema Web</h4></div>
-        <div><h2>SUPPLY LOGISTIC SYSTEM</h2></div>
-        <p>A system aimed at managing the entire supply chain</p>
+        <div><h4>{{work.type}}</h4></div>
+        <div><h2>{{work.title}}</h2></div>
+        <p>{{work.shortDescription}}</p>
     </div>
     </v-flex>
     <v-flex xs12 md3>
       <div class="works-details-body-top-right">
         <div class="works-details-body-top-button">
-            <router-link to="/"><v-btn x-large id="works-details-body-top-button">ACESSO AO SISTEMA</v-btn></router-link>
+            <a :href=work.linkSystem target="_blank"><v-btn x-large id="works-details-body-top-button">ACESSO AO SISTEMA</v-btn></a>
         </div>
         <div class="works-details-body-top-github">
-            <router-link to="/"><img class="work-body-image" src="../assets/Github.png" alt=""> GitHub</router-link>
+            <a :href=work.linkGit target="_blank"><img class="work-body-image" src="../assets/Github.png" alt=""> GitHub</a>
         </div>
         <div class="works-details-body-top-documentation">
-            <router-link to="/"><img class="work-body-image" src="../assets/Documentation.png" alt="">  Documentation</router-link>
+            <a :href=work.linkDocument target="_blank"><img class="work-body-image" src="../assets/Documentation.png" alt="">  Documentation</a>
         </div>
       </div>
     </v-flex>
@@ -26,21 +27,60 @@
   </div>
   <div class="works-details-body-bottom">
     <v-layout row wrap class="works-details-body-bottom-1">
-      <v-flex xs12 md4 class="works-details-body-bottom-1-text"><p>With several control tools, the system will provide process performance, speed without losing control of transactions, making decisions structured and predictable</p>
+      <v-flex xs12 md4 class="works-details-body-bottom-1-text"><p>{{work.text1}}</p>
       </v-flex>
       <v-flex xs12 md8 class="works-details-body-bottom-1-image"><img class="work-body-image" src="../assets/Rectangle 5.png" alt="">
       </v-flex>
     </v-layout>
     <v-layout row wrap class="works-details-body-bottom-2">
-      <v-flex xs12 md4 offset-xs4 align-end class="works-details-body-bottom-2-text"><p>With several control tools, the system will provide process performance, speed without losing control of transactions, making decisions structured and predictable</p>
+      <v-flex xs12 md4 offset-xs4 align-end class="works-details-body-bottom-2-text"><p>{{work.text2}}</p>
       </v-flex>
       <v-flex xs12 md4 class="works-details-body-bottom-2-image justify"><img class="work-body-image" src="../assets/Rectangle 5.png" alt="">
       </v-flex>
     </v-layout>
   </div>
+</v-skeleton-loader>
 </div>
+<div v-else class="works-details-body"></div>
 </template>
 <script>
+import VueRouter from 'vue-router'
+import api from '../service/api/api'
+export default {
+  data () {
+    return {
+      work: {},
+      loading: Boolean,
+      attrs: {
+        class: 'mb-6',
+        boilerplate: true,
+        elevation: 2
+      }
+    }
+  },
+  created () {
+    this.loading = false
+    this.getWork()
+  },
+  methods: {
+    getWork () {
+      this.route = new VueRouter(this.$route)
+      const id = this.route.options.params.id
+      api
+        .get('/works/' + id)
+        .then(response => {
+          this.work = response.data
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
+  }
+}
 </script>
 <style>
 .works-details-body{
@@ -118,10 +158,12 @@
 .works-details-body-bottom-2{
   width: 100%;
   height: 50%;
+  margin: 3px;
 }
 .works-details-body-bottom-1{
   width: 100%;
   height: 50%;
+  margin: 3px;
 }
 
 .works-details-body-bottom-1-text{
@@ -135,7 +177,7 @@
 .works-details-body-bottom-2-text{
   height: 100%;
   width: 70%;
-  text-align: right;
+  text-align: left;
 }
 .works-details-body-bottom-2-image{
   height: 100%;
