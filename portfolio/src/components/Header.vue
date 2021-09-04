@@ -5,7 +5,7 @@
         <li><router-link to="/">HOME</router-link></li>
         <li><router-link to="/about">ABOUT</router-link></li>
         <li><router-link to="/works">WORKS</router-link></li>
-        <li><router-link to="/curriculum">CURRICULUM</router-link></li>
+        <li><a href="https://drive.google.com/file/d/17He4kXXBydnMVwEjgewD7e8j66vfZwCl/view?usp=sharing" target="blank">CURRICULUM</a></li>
         <li><router-link to="/contact">CONTACT</router-link></li>
       </ul>
   </v-system-bar>
