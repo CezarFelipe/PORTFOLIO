@@ -1,6 +1,7 @@
 FROM node:10-alpine as vue
 WORKDIR /app
 COPY package.json /app
+COPY db.json /app
 RUN npm install --silent
 COPY . .
 RUN npm run build
