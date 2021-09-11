@@ -44,5 +44,11 @@ export default {
 #header li a:hover { text-decoration: none; color:#5E3927;}
 #header li a:focus { text-decoration: none; color:#5E3927;}
 #header li a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
-
+@media only screen and (max-width: 480px) {
+  #header{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 2px;
+  }
+  }
 </style>

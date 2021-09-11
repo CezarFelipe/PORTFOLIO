@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="body">
     <Header/>
     <v-main>
       <router-view/>
@@ -23,6 +23,9 @@ export default {
 }
 </script>
 <style>
+#body{
+  background-color: #0D0D0D;
+}
 h1
 {
   font-size: 60px;

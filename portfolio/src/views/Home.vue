@@ -85,7 +85,7 @@ export default {
   width: 80%;
 }
 .body{
-  height: 400px;
+  height: 350px;
   background-color:#0D0D0D;
 }
 .body-top{
@@ -122,6 +122,7 @@ export default {
   height: 43%;
   width: 100%;
   background-color: #0D0D0D;
+  margin-top: 20px;
 }
 .text2{
   height: 100%;
@@ -194,5 +195,157 @@ export default {
 .body-bottom-link li a img{
   width: 50%;
   height: 100%;
+}
+@media only screen and (max-width: 414px) {
+.body{
+  height: 80%;
+}
+.image{
+  display: none;
+}
+.text{
+  height: 50%;
+  width: 100%;
+}
+.text1{
+  height: 100%;
+  width: 100%;
+}
+.body-bottom{
+  height: 30%;
+}
+.body-top{
+  height: 90%;
+}
+.text2-text-titulo{
+  margin-top: 10px;
+  height: 50%;
+}
+.text2-text-titulo h2{
+  font-size: 30px;
+}
+.text2-text-titulo span{
+  font-size: 32px;
+}
+.text2-text-topico2 ul li{
+  font-size: 14px;
+}
+.text2-text-topico1 ul li{
+  font-size: 14px;
+}
+}
+@media only screen and (max-width: 540px) {
+.body{
+  height: 80%;
+}
+.image{
+  display: none;
+}
+.text{
+  height: 50%;
+  width: 100%;
+}
+.text1{
+  height: 100%;
+  width: 100%;
+}
+.body-bottom{
+  height: 30%;
+}
+.body-top{
+  height: 90%;
+}
+.text2-text-titulo{
+  margin-top: 10px;
+  height: 50%;
+}
+.text2-text-titulo h2{
+  font-size: 30px;
+}
+.text2-text-titulo span{
+  font-size: 32px;
+}
+.text2-text-topico2 ul li{
+  font-size: 14px;
+}
+.text2-text-topico1 ul li{
+  font-size: 14px;
+}
+}
+@media only screen and (max-width: 800px) {
+.body{
+  height: 80%;
+}
+.image{
+  display: none;
+}
+.text{
+  height: 50%;
+  width: 100%;
+}
+.text1{
+  height: 100%;
+  width: 100%;
+}
+.body-bottom{
+  height: 30%;
+}
+.body-top{
+  height: 90%;
+}
+.text2-text-titulo{
+  margin-top: 10px;
+  height: 50%;
+}
+.text2-text-titulo h2{
+  font-size: 30px;
+}
+.text2-text-titulo span{
+  font-size: 32px;
+}
+.text2-text-topico2 ul li{
+  font-size: 14px;
+}
+.text2-text-topico1 ul li{
+  font-size: 14px;
+}
+}
+@media only screen and (max-width: 900px) {
+.body{
+  height: 80%;
+}
+.image{
+  display: none;
+}
+.text{
+  height: 50%;
+  width: 100%;
+}
+.text1{
+  height: 100%;
+  width: 100%;
+}
+.body-bottom{
+  height: 30%;
+}
+.body-top{
+  height: 90%;
+}
+.text2-text-titulo{
+  margin-top: 10px;
+  height: 50%;
+}
+.text2-text-titulo h2{
+  font-size: 30px;
+}
+.text2-text-titulo span{
+  font-size: 32px;
+}
+.text2-text-topico2 ul li{
+  font-size: 14px;
+}
+.text2-text-topico1 ul li{
+  font-size: 14px;
+}
 }
 </style>

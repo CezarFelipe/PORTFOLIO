@@ -4,6 +4,7 @@ COPY package.json /app
 RUN npm install --silent
 COPY . .
 RUN npm run build
+RUN npm run backend
 
 FROM nginx:alpine
 VOLUME /var/cache/nginx
