@@ -4,8 +4,9 @@ COPY package.json /app
 COPY db.json /app
 RUN npm install --silent
 COPY . .
+RUN npm run backend-prod
 RUN npm run build
-RUN npm run backend
+
 
 FROM nginx:alpine
 VOLUME /var/cache/nginx

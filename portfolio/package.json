@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "backend": "json-server --watch db.json"
+    "backend-prod": "json-server db.json --host 34.95.134.192 --watch" ,
+    "backend": "json-server db.json --watch" 
   },
   "dependencies": {
     "axios": "^0.21.1",
