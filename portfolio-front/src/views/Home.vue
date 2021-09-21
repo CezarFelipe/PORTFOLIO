@@ -63,9 +63,10 @@ export default {
   methods: {
     getWork () {
       api
-        .get('/works')
+        .get('/works/')
         .then(response => {
           this.works = response.data
+          console.log(response.data)
           this.loading = true
         })
         .catch(error => {
