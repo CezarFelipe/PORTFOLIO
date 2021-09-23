@@ -1,0 +1,41 @@
+version: '3.0'
+
+services:
+  app:
+    build: .
+    container_name: portfolio-api
+    ports:
+      - 81:8090
+    environment:
+      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
+      - PROFILE=dev
+    links:
+      - db
+    depends_on:
+      - db
+    extra_hosts:
+      - 'host.docker.internal:172.17.0.1'
+  db:
+    image: postgres:13-alpine
+    container_name: portfolio-api-db
+    hostname: postgres
+    restart: always
+    tty: true
+    ports:
+    - 5432:5432
+    volumes:
+    - ./.docker/dbdata:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=01112012
+    - POSTGRES_DB=portfolio
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: portfolio-api-pgadmin
+    depends_on:
+    - db
+    tty: true
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=admin@user.com
+    - PGADMIN_DEFAULT_PASSWORD=123456
+    ports:
+    - 9002:80
