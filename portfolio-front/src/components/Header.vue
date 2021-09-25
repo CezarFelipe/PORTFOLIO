@@ -5,14 +5,41 @@
         <li><router-link to="/">HOME</router-link></li>
         <li><router-link to="/about">ABOUT</router-link></li>
         <li><router-link to="/works">WORKS</router-link></li>
-        <li><a href="https://drive.google.com/file/d/17He4kXXBydnMVwEjgewD7e8j66vfZwCl/view?usp=sharing" target="blank">CURRICULUM</a></li>
+        <li><a :href=profile.linkCurriculum target="blank">CURRICULUM</a></li>
         <li><router-link to="/contact">CONTACT</router-link></li>
       </ul>
   </v-system-bar>
 </template>
 <script>
+import api from '../service/api/api'
 export default {
-  name: 'Header'
+  name: 'Header',
+  data: () => {
+    return {
+      profile: {}
+    }
+  },
+  created () {
+    this.loading = false
+    this.getProfile(1)
+  },
+  methods: {
+    getProfile (id) {
+      api
+        .get('/profile/' + id)
+        .then(response => {
+          this.profile = response.data
+          console.log(response.data)
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
+  }
 }
 </script>
 <style>

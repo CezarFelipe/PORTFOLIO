@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="image">
-        <img src="../assets/Rectangle 13.png" alt="">
+        <img img :src=profile.photoHome alt="">
       </div>
     </div>
     <div class="body-bottom">
@@ -39,7 +39,7 @@
       </div>
       <v-layout row wrap class="body-bottom-link">
         <v-flex xs12 md4 class="body-bottom-link-work" v-for="work in works" :key="work.categoryId">
-          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
+          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img img :src=work.imageMain alt="1" border="0"></router-link>
         </v-flex>
       </v-layout>
     </div>
@@ -53,12 +53,14 @@ export default {
   },
   data: () => {
     return {
-      works: []
+      works: [],
+      profile: {}
     }
   },
   created () {
     this.loading = false
     this.getWork()
+    this.getProfile(1)
   },
   methods: {
     getWork () {
@@ -66,6 +68,22 @@ export default {
         .get('/works/')
         .then(response => {
           this.works = response.data
+          this.encodedImage = this.works.encodedImage
+          console.log(response.data)
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    },
+    getProfile (id) {
+      api
+        .get('/profile/' + id)
+        .then(response => {
+          this.profile = response.data
           console.log(response.data)
           this.loading = true
         })
@@ -198,9 +216,10 @@ export default {
     font-family: Uchen;
     font-size: 14PX;
 }
-.body-bottom-link li a img{
-  width: 50%;
-  height: 100%;
+.body-bottom-link-work img{
+  width: 80%;
+  height: 80%;
+  margin: 5px;
 }
 .body-bottom-link-work{
   float: left;

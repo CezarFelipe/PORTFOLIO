@@ -3,8 +3,8 @@
 <div class="works-body-box">
 <v-container class="work-body">
   <v-layout row wrap class="work-body-bottom">
-    <v-flex xs12 md4 v-for="work in works" :key="work.categoryId">
-    <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
+    <v-flex class="work-body-bottom-works" xs12 md4 v-for="work in works" :key="work.categoryId">
+    <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" img :src=work.imageMain alt=""></router-link>
     <div class="work-body-image-text">
         <h6>Title: {{work.title}}</h6>
         <h6>Type: {{work.type}}</h6>
@@ -68,5 +68,10 @@ padding-top: 5%;
 .work-body-image-text h6{
   color: #FFFFFF;
   font-weight: unset;
+}
+.work-body-bottom-works img{
+  width:  70%;
+  height: 70%;
+  margin: 2px;
 }
 </style>

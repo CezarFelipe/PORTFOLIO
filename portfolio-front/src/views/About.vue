@@ -8,7 +8,7 @@
         <p>Apaixonado por programação, desenvolvedor fullstack, conheço tecnologias de front end como os framework Angular e VueJs, e Html, css e Java Script e no back end as linguagens Java e os framework quartz e spring, e C# e a engine Unity.</p>
       </div>
       <div class="about-body-top-image">
-      <img src="../assets/Rectangle 13.png" alt="">
+      <img img :src=profile.photoAbout alt="">
       </div>
     </div>
     <div class="about-body-bottom">
@@ -23,6 +23,38 @@
   </div>
 </template>
 <script>
+import api from '../service/api/api'
+export default {
+  components: {
+  },
+  data: () => {
+    return {
+      works: [],
+      profile: {}
+    }
+  },
+  created () {
+    this.loading = false
+    this.getProfile(1)
+  },
+  methods: {
+    getProfile (id) {
+      api
+        .get('/profile/' + id)
+        .then(response => {
+          this.profile = response.data
+          console.log(response.data)
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
+  }
+}
 </script>
 <style>
 h1

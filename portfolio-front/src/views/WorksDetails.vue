@@ -29,13 +29,13 @@
     <v-layout row wrap class="works-details-body-bottom-1">
       <v-flex xs12 md4 class="works-details-body-bottom-1-text"><p>{{work.text1}}</p>
       </v-flex>
-      <v-flex xs12 md8 class="works-details-body-bottom-1-image"><img class="work-body-image" src="../assets/Rectangle 5.png" alt="">
+      <v-flex xs12 md8 class="works-details-body-bottom-1-image"><img class="work-body-image" img :src=work.image1 alt="">
       </v-flex>
     </v-layout>
     <v-layout row wrap class="works-details-body-bottom-2">
       <v-flex xs12 md4 offset-xs4 align-end class="works-details-body-bottom-2-text"><p>{{work.text2}}</p>
       </v-flex>
-      <v-flex xs12 md4 class="works-details-body-bottom-2-image justify"><img class="work-body-image" src="../assets/Rectangle 5.png" alt="">
+      <v-flex xs12 md4 class="works-details-body-bottom-2-image justify"><img class="work-body-image" img :src=work.image2 alt="">
       </v-flex>
     </v-layout>
   </div>

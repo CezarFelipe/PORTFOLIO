@@ -15,7 +15,7 @@
             <img src="../assets/Ellipse 1.png" alt="">
           </div>
           <div class="link-linkedin-txt text-link">
-            <a href="https://www.linkedin.com/in/cezarfelipedasilva/" target="blank">https://www.linkedin.com/in/cezarfelipedasilva/</a>
+            <a :href=profile.linkLinkedin target="blank">{{profile.linkLinkedin}}</a>
           </div>
         </div>
         <div class="link-github">
@@ -23,7 +23,7 @@
             <img src="../assets/logo-github.png" alt="">
           </div>
           <div class="link-github-txt text-link">
-              <a href="https://github.com/CezarFelipe" target="blank">https://github.com/CezarFelipe</a>
+              <a :href=profile.linkGithub target="blank">{{profile.linkGithub}}</a>
           </div>
         </div>
         <div class="link-email">
@@ -31,7 +31,7 @@
             <img src="../assets/logo-email.png" alt="">
           </div>
           <div class="link-email-txt text-link">
-            cezarfelipedasilva@gmail.com
+            <a :href=profile.linkEmail target="blank">{{profile.linkEmail}}</a>
           </div>
         </div>
       </div>
@@ -40,6 +40,38 @@
 </div>
 </template>
 <script>
+import api from '../service/api/api'
+export default {
+  components: {
+  },
+  data: () => {
+    return {
+      works: [],
+      profile: {}
+    }
+  },
+  created () {
+    this.loading = false
+    this.getProfile(1)
+  },
+  methods: {
+    getProfile (id) {
+      api
+        .get('/profile/' + id)
+        .then(response => {
+          this.profile = response.data
+          console.log(response.data)
+          this.loading = true
+        })
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+          this.loading = true
+        })
+        .finally(() => this.loading === false)
+    }
+  }
+}
 </script>
 <style>
 .contact-body{
