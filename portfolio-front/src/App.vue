@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style>
-#body{
+#body body{
   background-color: #0D0D0D;
 }
 h1

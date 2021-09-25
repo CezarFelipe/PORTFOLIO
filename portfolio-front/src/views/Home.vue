@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body" id="body">
     <div class="body-top">
       <div class="text">
         <div class="text1">
@@ -37,11 +37,11 @@
     <div class="body-bottom">
       <div class="body-bottom-titulo">PORTFOLIO
       </div>
-      <div class="body-bottom-link">
-          <v-flex xs12 md4 v-for="work in works" :key="work.categoryId">
-            <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
-          </v-flex>
-      </div>
+      <v-layout row wrap class="body-bottom-link">
+        <v-flex xs12 md4 class="body-bottom-link-work" v-for="work in works" :key="work.categoryId">
+          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" src="../assets/Rectangle 5.png" alt=""></router-link>
+        </v-flex>
+      </v-layout>
     </div>
   </div>
 </template>
@@ -80,14 +80,16 @@ export default {
 }
 </script>
 <style>
-
+#body{
+  background-color: #0D0D0D;
+  margin-bottom: 30px;
+}
 .text1{
   margin-right: 10px;
   width: 80%;
 }
 .body{
-  height: 350px;
-  background-color:#0D0D0D;
+  height: auto;
 }
 .body-top{
   height: 90%;
@@ -114,10 +116,13 @@ export default {
   color:#F7F7F7;
   font-size:24px;
   font-family: Uchen;
+  background-color: #0D0D0D;
 }
 .body-bottom-link{
   text-align: center;
   height: 100%;
+  background-color: #0D0D0D;
+  width: 100%;
 }
 .body-bottom{
   height: 43%;
@@ -196,6 +201,10 @@ export default {
 .body-bottom-link li a img{
   width: 50%;
   height: 100%;
+}
+.body-bottom-link-work{
+  float: left;
+  background-color: #0D0D0D;
 }
 @media only screen and (max-width: 414px) {
 .body{
