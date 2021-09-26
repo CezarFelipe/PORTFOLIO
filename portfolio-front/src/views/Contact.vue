@@ -14,7 +14,7 @@
           <div class="link-linkedin-img">
             <img src="../assets/Ellipse 1.png" alt="">
           </div>
-          <div class="link-linkedin-txt text-link">
+          <div class="link-linkedin-txt-text-link">
             <a :href=profile.linkLinkedin target="blank">{{profile.linkLinkedin}}</a>
           </div>
         </div>
@@ -22,7 +22,7 @@
           <div class="link-github-img">
             <img src="../assets/logo-github.png" alt="">
           </div>
-          <div class="link-github-txt text-link">
+          <div class="link-github-txt-text-link">
               <a :href=profile.linkGithub target="blank">{{profile.linkGithub}}</a>
           </div>
         </div>
@@ -30,7 +30,7 @@
           <div class="link-email-img">
             <img src="../assets/logo-email.png" alt="">
           </div>
-          <div class="link-email-txt text-link">
+          <div class="link-email-txt-text-link">
             <a :href=profile.linkEmail target="blank">{{profile.linkEmail}}</a>
           </div>
         </div>
@@ -175,4 +175,61 @@ export default {
 .text-link a:hover { text-decoration: none; color:#5E3927;}
 .text-link a:focus { text-decoration: none; color:#5E3927;}
 .text-link a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
+@media only screen and (max-width: 414px) {
+.link-linkedin{
+  width: 100%;
+  line-height: 60px;
+}
+.link-linkedin-txt-text-link{
+  float: left;
+  width: 80%;
+  font-size: 10px;
+}
+.link-linkedin-img{
+  width: 20%;
+}
+.link-linkedin-txt-text-link a {text-decoration: none; color:#F7F7F7} /* Globally */
+.link-linkedin-txt-text-link a:visited { text-decoration: none; color:#F7F7F7; }
+.link-linkedin-txt-text-link a:hover { text-decoration: none; color:#5E3927;}
+.link-linkedin-txt-text-link a:focus { text-decoration: none; color:#5E3927;}
+.link-linkedin-txt-text-link a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
+
+/**/
+
+.link-github{
+  width: 100%;
+  line-height: 60px;
+}
+.link-github-txt-text-link{
+  float: left;
+  width: 80%;
+  font-size: 10px;
+}
+.link-github-img{
+  width: 20%;
+}
+.link-github-txt-text-link a {text-decoration: none; color:#F7F7F7} /* Globally */
+.link-github-txt-text-link a:visited { text-decoration: none; color:#F7F7F7; }
+.link-github-txt-text-link a:hover { text-decoration: none; color:#5E3927;}
+.link-github-txt-text-link a:focus { text-decoration: none; color:#5E3927;}
+.link-github-txt-text-link a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
+}
+/**/
+.link-email{
+  width: 100%;
+  line-height: 60px;
+}
+.link-email-txt-text-link{
+  float: left;
+  width: 80%;
+  font-size: 10px;
+}
+.link-email-img{
+  width: 20%;
+}
+.link-email-txt-text-link a {text-decoration: none; color:#F7F7F7} /* Globally */
+.link-email-txt-text-link a:visited { text-decoration: none; color:#F7F7F7; }
+.link-email-txt-text-link a:hover { text-decoration: none; color:#5E3927;}
+.link-email-txt-text-link a:focus { text-decoration: none; color:#5E3927;}
+.link-email-txt-text-link a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
 </style>

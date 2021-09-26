@@ -39,7 +39,7 @@
       </div>
       <v-layout row wrap class="body-bottom-link">
         <v-flex xs12 md4 class="body-bottom-link-work" v-for="work in works" :key="work.categoryId" id="listportfolio">
-          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img img :src=work.imageMain alt="1" border="0"><br>{{work.title}}</router-link>
+          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img img :src=work.imageMain alt="1" border="0"><br><p>{{work.title}}</p></router-link>
         </v-flex>
       </v-layout>
     </div>
@@ -266,6 +266,9 @@ export default {
 }
 .text2-text-topico1 ul li{
   font-size: 14px;
+}
+#listportfolio a p{
+  display: none;
 }
 }
 @media only screen and (max-width: 540px) {

@@ -105,4 +105,30 @@ height: 35%;
   height: 100%;
   width: 100%;
 }
+@media only screen and (max-width: 414px) {
+
+.about-body-top-text{
+  width: 100%;
+}
+.about-body-bottom{
+  margin-top: 150px;
+}
+.about-body-top-image{
+  display: none;
+}
+.about-body-bottom-tex{
+  width: 100%;
+}
+.about-body-bottom-image{
+  display: none;
+}
+.about-body-bottom-image img{
+  display: none;
+}
+.about{
+width: 100%;
+height: 80%;
+background-color: #0D0D0D;
+}
+}
 </style>

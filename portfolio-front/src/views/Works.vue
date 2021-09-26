@@ -75,4 +75,9 @@ padding-top: 5%;
   height: 70%;
   margin: 2px;
 }
+@media only screen and (max-width: 414px) {
+.work-body-image-text h6{
+  display: none;
+}
+}
 </style>

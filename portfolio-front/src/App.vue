@@ -7,7 +7,6 @@
     <Footer/>
   </v-app>
 </template>
-
 <script>
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
@@ -24,6 +23,9 @@ export default {
 </script>
 <style>
 #body body{
+  background-color: #0D0D0D;
+}
+#body{
   background-color: #0D0D0D;
 }
 h1
