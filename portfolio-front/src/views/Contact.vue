@@ -14,7 +14,7 @@
           <div class="link-linkedin-img">
             <img src="../assets/Ellipse 1.png" alt="">
           </div>
-          <div class="link-linkedin-txt-text-link">
+          <div class="link-linkedin-txt-text-link text-link">
             <a :href=profile.linkLinkedin target="blank">{{profile.linkLinkedin}}</a>
           </div>
         </div>
@@ -22,7 +22,7 @@
           <div class="link-github-img">
             <img src="../assets/logo-github.png" alt="">
           </div>
-          <div class="link-github-txt-text-link">
+          <div class="link-github-txt-text-link text-link">
               <a :href=profile.linkGithub target="blank">{{profile.linkGithub}}</a>
           </div>
         </div>
@@ -30,7 +30,7 @@
           <div class="link-email-img">
             <img src="../assets/logo-email.png" alt="">
           </div>
-          <div class="link-email-txt-text-link">
+          <div class="link-email-txt-text-link text-link">
             <a :href=profile.linkEmail target="blank">{{profile.linkEmail}}</a>
           </div>
         </div>
@@ -129,12 +129,12 @@ export default {
 .link-linkedin-img img{
   width: 60%;
 }
-.link-linkedin-txt{
+.link-linkedin-txt-text-link a{
   color:#F7F7F7;
   font-family: Uchen;
   font-size: 18PX;
   text-align: left;
-  line-height: 500%;
+  line-height: 400%;
 }
 .link-email-img{
   float: left;
@@ -146,12 +146,11 @@ export default {
 .link-email-img img{
   width: 60%;
 }
-.link-email-txt{
+.link-email-txt-text-link a{
   color:#F7F7F7;
   font-family: Uchen;
   font-size: 18PX;
   text-align: left;
-  line-height: 500%;
 }
 .link-github-img{
   float: left;
@@ -163,14 +162,14 @@ export default {
 .link-github-img img{
   width: 60%;
 }
-.link-github-txt{
+.link-github-txt-text-link a{
   color:#F7F7F7;
   font-family: Uchen;
   font-size: 18PX;
   text-align: left;
-  line-height: 500%;
+  line-height: 320%;
 }
-.text-link a { color:#F7F7F7} /* Globally */
+.text-link a { text-decoration: none;color:#F7F7F7} /* Globally */
 .text-link a:visited { text-decoration: none; color:#F7F7F7; }
 .text-link a:hover { text-decoration: none; color:#5E3927;}
 .text-link a:focus { text-decoration: none; color:#5E3927;}
