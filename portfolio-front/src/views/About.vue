@@ -3,8 +3,8 @@
     <div class="about-body-top">
       <div class="about-body-top-text">
         <h1>About</h1>
-        <p>Paulistano, nascido na grande são paulo região do ABC, casado há mais de 9 anos, pai de um lindo casal de filhos.</p>
-        <p>Formado em Bacharel em Administração pela faculdade Uniesp, pós-graduado em Jogos Digitais pela faculdade Cruzeiro do Sul e pós-graduado em Engenharia de Software pela faculdade Estácio.</p>
+        <p>Paulistano, born in the greater São Paulo region of the ABC region, married for over 9 years, father of two, a beautiful couple of children.</p>
+        <p>Graduated in Business Administration from Uniesp College, post-graduated in Digital Games from Cruzeiro do Sul College and post-graduated in Software Engineering from Estácio College.</p>
         <p>Apaixonado por programação, desenvolvedor fullstack, conheço tecnologias de front end como os framework Angular e VueJs, e Html, css e Java Script e no back end as linguagens Java e os framework quartz e spring, e C# e a engine Unity.</p>
       </div>
       <div class="about-body-top-image">
@@ -16,8 +16,8 @@
         <img src="../assets/Rectangle 2.png" alt="">
       </div>
       <div class="about-body-bottom-tex">
-      <p>Tenho um perfil alinhado com o conceito full cycle, que considero todos os pontos da aplicação, desde a concepção da ideia, arquitetura e deploy.</p>
-      <p>Também sou gamer designer, Art Designer e Sound Designer, e tenho como principla hobby jogar videogame.</p>
+      <p>I have a profile aligned with the full cycle concept, the complete cycle, from idea conception, architecture and deployment.</p>
+      <p>I am also a gamer designer, Art Designer and Sound Designer, and my main hobby is playing video games.</p>
       </div>
     </div>
   </div>

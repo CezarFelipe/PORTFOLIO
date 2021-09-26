@@ -6,8 +6,8 @@
     <v-flex class="work-body-bottom-works" xs12 md4 v-for="work in works" :key="work.categoryId">
     <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img class="work-body-image" img :src=work.imageMain alt=""></router-link>
     <div class="work-body-image-text">
-        <h6>Title: {{work.title}}</h6>
-        <h6>Type: {{work.type}}</h6>
+        <h6>Title - {{work.title}}</h6>
+        <h6>Type - {{work.type}}</h6>
       </div>
     </v-flex>
   </v-layout>
@@ -68,6 +68,7 @@ padding-top: 5%;
 .work-body-image-text h6{
   color: #FFFFFF;
   font-weight: unset;
+  text-transform: uppercase;
 }
 .work-body-bottom-works img{
   width:  70%;

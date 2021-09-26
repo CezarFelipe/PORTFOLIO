@@ -38,8 +38,8 @@
       <div class="body-bottom-titulo">PORTFOLIO
       </div>
       <v-layout row wrap class="body-bottom-link">
-        <v-flex xs12 md4 class="body-bottom-link-work" v-for="work in works" :key="work.categoryId">
-          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img img :src=work.imageMain alt="1" border="0"></router-link>
+        <v-flex xs12 md4 class="body-bottom-link-work" v-for="work in works" :key="work.categoryId" id="listportfolio">
+          <router-link :to="{ name: 'WorksDetails', params: { id: work.id} }"><img img :src=work.imageMain alt="1" border="0"><br>{{work.title}}</router-link>
         </v-flex>
       </v-layout>
     </div>
@@ -225,6 +225,11 @@ export default {
   float: left;
   background-color: #0D0D0D;
 }
+#listportfolio a { color:#F7F7F7} /* Globally */
+#listportfolio a:visited { text-decoration: none; color:#F7F7F7; }
+#listportfolio a:hover { text-decoration: none; color:#5E3927;}
+#listportfolio a:focus { text-decoration: none; color:#5E3927;}
+#listportfolio a:hover, a:active { text-decoration: none; color:#5E3927; font-weight: bolder;}
 @media only screen and (max-width: 414px) {
 .body{
   height: 80%;
